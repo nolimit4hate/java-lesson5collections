@@ -1,0 +1,14 @@
+ Цель: коллекции и generics
+1. Посмотреть лекцию 10 https://www.youtube.com/playlist?list=PLB0276A0A62BDEF06
+2. Прочитать https://docs.oracle.com/javase/tutorial/java/generics/index.html
+
+Задание:
+1. Создать несколько коллекций: List, Map, Set
+2. Создать интерфейс Printable, с методом “String printMe()”
+3. Создать класс реализацию Printable, который имеет 1 приватное поле field типа стринг, с модификатором final, и реализует интерфейс Printable, метод выводит возвращает строку “Some text” + field;
+4. Создать параметризированый интерфейс GenericPrinter<T>, в котором есть метод printIt(T toPrint), метод просто выводит в stdout то что вернул printMe
+5. Создать параметризированную реализацию GenericPrinterImpl, которая работает с <T extends Printable>
+6. Написать реализацию метода printIt, который обходит любую коллекцию (java foreach) и выводит её содержимое на экран
+7. в main методе создать несколько коллекций ( List, Map, Set) параметризированых Printable, добавить несколько объектов типа Printable, 
+8. Написать параметризированный метод <T extends Collection<Printable>>, который на вход принимает T, создает реализацию GenericPrinter и вызывает метод printIt на каждом элемете коллекции
+	
