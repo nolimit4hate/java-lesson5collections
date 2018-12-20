@@ -5,11 +5,15 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-    // some temp test
+    /*
+     some temp test
+      */
 	    Human human1 = new Human();
         System.out.println(human1.toString());
 
-    // testArrayList
+    /*
+     testArrayList
+      */
         ArrayListCollection humansList = new ArrayListCollection();
         humansList.addHowMuchHumans(5);
         System.out.println(humansList.getHumansInfo());
@@ -19,13 +23,15 @@ public class Main {
 /*
     TEST LESSON5: GenericPrinterImpl
  */
-        GenericPrinter genericPrinter = new GenericPrinterImpl();
+        GenericPrinter<Collection<Printable>> genericPrinter = new GenericPrinterImpl<>();
         Printable printableObj = new SomethingCanPrint();
+
         // make new collections
         List<Printable> printableArrayList = new ArrayList<>();
         Set<Printable> printablesTreeSet = new TreeSet<>();
         Set<Printable> printableHashSet = new HashSet<>();
         Map<Integer, Printable> printableMap = new TreeMap<>();
+
         // add object to collections
         for(int i = 0; i < 10; i++) {
             printableArrayList.add(new SomethingCanPrint());
@@ -33,22 +39,12 @@ public class Main {
             printablesTreeSet.add(new SomethingCanPrint());
             printableMap.put(i, new SomethingCanPrint());
         }
-        // for object
-        genericPrinter.printIt(printableObj);
 
-        // for ArrayList
+        /*
+            use generic printer
+         */
         genericPrinter.printIt(printableArrayList);
-
-        // for HashSet
-        genericPrinter.printIt(printableHashSet);
-
-        // for TreeSet
         genericPrinter.printIt(printablesTreeSet);
-
-        // for TreeMap
-
-        genericPrinter.printIt(printableMap);
-
-
+        genericPrinter.printIt(printableHashSet);
     }
 }
